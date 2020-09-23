@@ -1,0 +1,35 @@
+# YAML definitions
+# (this uses StrictYAML, since YAML has some issues)
+
+regions:
+  HorizontalDomain:
+    # with `-` it's a list:
+    - lb
+    - nudging
+    - interior
+    - halo
+
+another_regions:
+  Domain:
+    # this is a dictionary
+    lb: lb
+    nudging: nudging
+    interior: interior
+    halo: halo
+
+# This is maps `k_flat` to the string "VerticalInterval"
+k_flat: VerticalInterval
+
+# aliasing is a bit unclear
+# technically `Edge > Cell > Vertex` is a string here
+VertexDiamond: Edge > Cell > Vertex
+
+# here it is a list ["Edge", "Cell", "Vertex"]
+DifferentVertexDiamond:
+  - Edge
+  - Cell
+  - Vertex
+
+EdgeDiamond: Edge > Cell > Edge
+
+g: 9.81
